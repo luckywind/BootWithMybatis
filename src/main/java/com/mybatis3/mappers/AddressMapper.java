@@ -7,9 +7,9 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
 import com.mybatis3.domain.Address;
+import org.springframework.transaction.annotation.Transactional;
 
-
-public interface AddressMapper 
+public interface AddressMapper
 {
 	@Select("select addr_id as addrId, street, city, state, zip, country from addresses where addr_id=#{id}")
 	Address selectAddressById(int id);

@@ -7,7 +7,9 @@ import com.mybatis3.domain.Address;
 import org.apache.ibatis.annotations.*;
 
 import com.mybatis3.domain.Student;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public interface StudentMapper
 {
 
@@ -62,7 +64,7 @@ public interface StudentMapper
 	 @Result(property="address", column="addr_id",
 //    使用内嵌sql也可以获取自定义字段详情
 //    例如，一对一映射，使用注解@One实现： select属性指向一个方法名，从students表返回的addr_id将作为参数传递给这个方法
-	 one=@One(select="com.com.mybatis3.mappers.StudentMapper.findAddressById"))
+	 one=@One(select="com.mybatis3.mappers.StudentMapper.findAddressById"))
 	 })
 	 Student selectStudentWithAddress(int studId);
 

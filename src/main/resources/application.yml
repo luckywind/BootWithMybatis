@@ -1,0 +1,7 @@
+server:
+  port: 8080
+spring:
+  #  多环境配置,切换时，只要修改这里的active激活即可
+  profiles:
+    active: dev
+
